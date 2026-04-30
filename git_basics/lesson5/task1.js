@@ -8,6 +8,6 @@ if (averageGrade < 60) {
   console.log('Добре');
 } else if (averageGrade <= 90) {
   console.log('Дуже добре');
-} else {
+} else if (averageGrade <= 100) {
   console.log('Відмінно');
 }

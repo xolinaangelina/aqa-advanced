@@ -13,6 +13,7 @@ switch (true) {
   case averageGrade <= 90:
     console.log('Дуже добре');
     break;
-  default:
+  case averageGrade <= 100: 
     console.log('Відмінно');
+    break;
 }
