@@ -1,4 +1,4 @@
-//Promise, then/catch, Promise.all, Promise.race
+// Promise, then/catch, Promise.all, Promise.race
 
 function fetchTodo() {
   return fetch('https://jsonplaceholder.typicode.com/todos/1')
@@ -10,8 +10,12 @@ function fetchUser() {
     .then(res => res.json());
 }
 
+// Присвоєння до змінних
+const allResults = Promise.all([fetchTodo(), fetchUser()]);
+const raceResult = Promise.race([fetchTodo(), fetchUser()]);
+
 // Promise.all
-Promise.all([fetchTodo(), fetchUser()])
+allResults
   .then(([todo, user]) => {
     console.log('Promise.all результат:');
     console.log('Todo:', todo);
@@ -20,7 +24,7 @@ Promise.all([fetchTodo(), fetchUser()])
   .catch(error => console.log('Помилка:', error));
 
 // Promise.race
-Promise.race([fetchTodo(), fetchUser()])
+raceResult
   .then(result => {
     console.log('Promise.race результат (перший виконаний):');
     console.log(result);
