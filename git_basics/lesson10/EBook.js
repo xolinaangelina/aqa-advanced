@@ -1,4 +1,4 @@
-const Book = require('./Book');
+const Book = require("./Book");
 
 class EBook extends Book {
   #fileFormat;
@@ -8,10 +8,12 @@ class EBook extends Book {
     this.fileFormat = fileFormat;
   }
 
-  get fileFormat() { return this.#fileFormat; }
+  get fileFormat() {
+    return this.#fileFormat;
+  }
   set fileFormat(value) {
-    if (typeof value !== 'string' || value.trim() === '') {
-      throw new Error('Формат файлу має бути непорожнім рядком');
+    if (typeof value !== "string" || value.trim() === "") {
+      throw new Error("Формат файлу має бути непорожнім рядком");
     }
     this.#fileFormat = value;
   }

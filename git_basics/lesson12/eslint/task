@@ -1,0 +1,40 @@
+// ❌ BEFORE: файл з навмисними ESLint помилками
+// Запусти: npm run lint        → побачиш помилки
+// Запусти: npm run lint:fix    → автовиправлення
+ 
+// 1. var замість const/let
+var userName = "John";
+var userAge = 25;
+ 
+// 2. Невикористана змінна
+const unusedVariable = "I am never used";
+ 
+// 3. == замість ===
+if (userAge == "25") {
+  console.log("Age is 25");
+}
+ 
+// 4. Функція з var та без return типу
+function getUserInfo() {
+  var result = userName + " is " + userAge + " years old";
+  console.log(result)
+}
+ 
+// 5. Стрілкова функція без дужок та з зайвим return
+const double = x => {
+  return x * 2
+}
+ 
+// 6. let де значення не змінюється
+let pi = 3.14;
+console.log(pi);
+ 
+// 7. Порівняння з null через ==
+const data = null;
+if (data == null) {
+  console.log("No data");
+}
+ 
+getUserInfo();
+console.log(double(5));
+console.log(userName);

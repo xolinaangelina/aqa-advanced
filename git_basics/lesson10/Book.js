@@ -9,37 +9,45 @@ class Book {
     this.year = year;
   }
 
-  get title() { return this.#title; }
+  get title() {
+    return this.#title;
+  }
   set title(value) {
-    if (typeof value !== 'string' || value.trim() === '') {
-      throw new Error('Назва має бути непорожнім рядком');
+    if (typeof value !== "string" || value.trim() === "") {
+      throw new Error("Назва має бути непорожнім рядком");
     }
     this.#title = value;
   }
 
-  get author() { return this.#author; }
+  get author() {
+    return this.#author;
+  }
   set author(value) {
-    if (typeof value !== 'string' || value.trim() === '') {
-      throw new Error('Автор має бути непорожнім рядком');
+    if (typeof value !== "string" || value.trim() === "") {
+      throw new Error("Автор має бути непорожнім рядком");
     }
     this.#author = value;
   }
 
-  get year() { return this.#year; }
+  get year() {
+    return this.#year;
+  }
   set year(value) {
-    if (typeof value !== 'number' || value < 0) {
-      throw new Error('Рік має бути додатним числом');
+    if (typeof value !== "number" || value < 0) {
+      throw new Error("Рік має бути додатним числом");
     }
     this.#year = value;
   }
 
   printInfo() {
-    console.log(`Назва: ${this.#title}, Автор: ${this.#author}, Рік: ${this.#year}`);
+    console.log(
+      `Назва: ${this.#title}, Автор: ${this.#author}, Рік: ${this.#year}`,
+    );
   }
 
   static getOldest(books) {
-    return books.reduce((oldest, book) => 
-      book.year < oldest.year ? book : oldest
+    return books.reduce((oldest, book) =>
+      book.year < oldest.year ? book : oldest,
     );
   }
 }
