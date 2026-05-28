@@ -1,4 +1,4 @@
-// ❌ BEFORE: файл з навмисними ESLint помилками
+// ESLint task - lesson 12
 // Запусти: npm run lint        → побачиш помилки
 // Запусти: npm run lint:fix    → автовиправлення
 
